@@ -36,7 +36,13 @@ const phrases = {
 };
 
 function generateRandomPhrase(maximumNumber) {
-  return Math.round(Math.random() * maximumNumber - 1);
+  let randomNumber = Math.round(Math.random() * maximumNumber - 1);
+
+  do {
+    randomNumber = Math.round(Math.random() * maximumNumber - 1);
+  } while (randomNumber == -1);
+
+  return randomNumber;
 }
 
 const fortuneCookie = document.querySelector('#fortuneCookieTrigger');
@@ -59,6 +65,9 @@ const setPhrase = function () {
   const randomPhrase = generateRandomPhrase(
     phrases[selectedCategoryPhrase].length
   );
+  console.log(phrases[selectedCategoryPhrase].length);
+  console.log(phrases[selectedCategoryPhrase][randomPhrase]);
+  console.log(randomPhrase);
 
   const finalPhrase = phrases[selectedCategoryPhrase][randomPhrase];
   showIntoScreen(finalPhrase);

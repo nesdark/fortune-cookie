@@ -1,0 +1,210 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+  list-style: none;
+}
+
+:root {
+  font-size: 62.5%;
+
+  --blue: #190361;
+  --dark-blue: #34355b;
+  --purple: #bb00ff;
+
+  --gradient: linear-gradient(45deg, var(--blue) 0%, var(--purple) 100%);
+
+  --ff-heading: 'Montserrat';
+  --ff-body: 'DM Sans';
+  --ff-luck: 'Dancing Script';
+
+  --fs-heading: 2.4rem;
+  --fs-body: 1.5rem;
+}
+
+body {
+  overflow-x: hidden;
+
+  height: 100vh;
+
+  background: var(--gradient);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: top center;
+}
+
+.root {
+  height: 100vh;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+main {
+  max-width: 42.8rem;
+}
+
+main .box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  background: white;
+
+  padding: 4.8rem 6.4rem;
+
+  box-shadow: 0px 20px 50px rgba(0, 0, 0, 0.8);
+  border-radius: 0.5rem;
+
+  text-align: center;
+}
+
+main .box:nth-child(2) {
+  animation: flip 3s ease;
+}
+
+main.closed-cookie .screen2,
+main .screen1 {
+  display: none;
+}
+
+main.closed-cookie .screen1,
+main .screen2 {
+  display: flex;
+}
+
+main .box h2 {
+  margin-bottom: 1.4rem;
+
+  font-family: var(--ff-heading);
+  font-size: var(--fs-heading);
+
+  color: var(--dark-blue);
+}
+
+main .box p {
+  font-weight: 400;
+  font-size: var(--fs-body);
+  line-height: 2rem;
+
+  color: var(--dark-blue);
+
+  margin-bottom: 2rem;
+}
+
+main .box p#luck {
+  animation: pulse 3s ease-in-out infinite;
+
+  background: #e4edf1;
+
+  padding: 1rem;
+
+  box-shadow: 2px 2px 2px rgba(85, 85, 85, 0.5);
+
+  font-family: var(--ff-luck);
+  font-size: var(--fs-heading);
+  line-height: 2.9rem;
+
+  color: #000000;
+}
+
+main .box select {
+  background: none;
+
+  padding: 1.3rem 2rem;
+
+  border: var(--dark-blue) 2px solid;
+  border-radius: 0.8rem;
+
+  font-family: var(--ff-heading);
+  font-size: 1.6rem;
+
+  margin-bottom: 3rem;
+
+  color: var(--dark-blue);
+}
+
+main .box img {
+  width: 30rem;
+}
+
+main .screen1 img:hover {
+  animation: shake 0.8s ease;
+  cursor: pointer;
+}
+
+main .box button {
+  padding: 1.6rem;
+
+  background: #ff9500;
+  border-radius: 4px;
+  border: #c77400 1px solid;
+
+  font-family: var(--ff-body);
+  font-weight: 700;
+  font-size: var(--fs-body);
+  line-height: 2rem;
+
+  text-align: center;
+
+  color: #ffffff;
+
+  cursor: pointer;
+}
+
+main .box button:hover {
+  background: #db8000;
+  border: #ff9500 1px solid;
+}
+
+/* ANIMATION */
+
+@keyframes flip {
+  0% {
+    transform: rotate3d(0, 1, 0, 360deg);
+  }
+
+  from {
+    transform: rotate3d(0, 1, 0, 200deg);
+  }
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(0.9);
+  }
+
+  60% {
+    transform: scale(1);
+  }
+
+  100% {
+    transform: scale(0.9);
+  }
+}
+
+@keyframes shake {
+  0% {
+    transform: translate(0);
+  }
+
+  20%,
+  40%,
+  60%,
+  80% {
+    transform: translate(0.8em);
+  }
+
+  10%,
+  30%,
+  50% {
+    transform: translate(-0.2em);
+  }
+
+  70%,
+  100% {
+    transform: translate(0);
+  }
+}

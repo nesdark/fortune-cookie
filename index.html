@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Fortune Cookie</title>
+
+    <link rel="stylesheet" href="./src/style.css" />
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;700&family=Dancing+Script&family=Montserrat:wght@700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div class="root">
+      <main class="closed-cookie">
+        <div class="screen1 box">
+          <h2>What's your luck today</h2>
+
+          <p>Open the cookie and discover!</p>
+
+          <select id="typeOfPhrase">
+            <option value="programming">Programming</option>
+            <option value="future">Future</option>
+            <option value="motivational">Motivational</option>
+          </select>
+
+          <img
+            src="./public/fortune-cookie.png"
+            alt="Fortune cookie closed"
+            id="fortuneCookieTrigger"
+          />
+        </div>
+        <div class="screen2 box">
+          <h2>Where is your luck of today</h2>
+          <p id="luck"></p>
+          <img src="./public/opened-cookie.png" alt="Fortune cookie opened" />
+          <button id="openAnotherCookie">Open another cookie</button>
+        </div>
+      </main>
+    </div>
+    <script src="./src/index.js"></script>
+  </body>
+</html>
